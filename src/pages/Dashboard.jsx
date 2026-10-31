@@ -5,7 +5,7 @@ export default function Dashboard({ tasks, goal, setGoal, loadSamples }) {
   const today = todayName();
 
   const doneTasks = tasks.filter((t) => t.status === "done");
-  const doingCount = tasks.filter((t) => t.status === "doing").length;
+  const doingCount = tasks.filter((t) => t.status === "in progress").length;
   const doneHours = doneTasks.reduce((sum, t) => sum + t.hours, 0);
   const pct = goal > 0 ? Math.min(100, Math.round((doneHours / goal) * 100)) : 0;
 

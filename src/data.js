@@ -1,28 +1,48 @@
-export const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+export const STATUSES = ["todo", "in progress", "completed"];
+export const PRIORITIES = ["low", "medium", "high"];
 
-export const TOPICS = [
-  "JavaScript",
-  "React",
-  "Node/Express",
-  "MongoDB",
-  "Auth",
-  "Git/GitHub",
-  "Machine Coding",
-  "Mock Interview",
-];
+// for moving a card one step forward (wraps back to todo)
+export const NEXT_STATUS = {
+  "todo": "in progress",
+  "in progress": "completed",
+  "completed": "todo",
+};
 
-export const STATUSES = ["todo", "doing", "done"];
-
-// getDay() has sunday as 0, our week starts on monday so shift it
-export const todayName = () => DAYS[(new Date().getDay() + 6) % 7];
-
-// for the empty state button, makes the demo less sad
+// for the empty state button
 export const SAMPLE_TASKS = [
-  { title: "Event loop: microtasks vs macrotasks", topic: "JavaScript", day: "Mon", hours: 1.5, status: "done" },
-  { title: "Memoization: React.memo, useMemo, useCallback", topic: "React", day: "Tue", hours: 2, status: "done" },
-  { title: "401 vs 403 and auth middleware flow", topic: "Auth", day: "Wed", hours: 1, status: "doing" },
-  { title: "Unique index + duplicate key error handling", topic: "MongoDB", day: "Thu", hours: 1, status: "todo" },
-  { title: "Git: reflog, revert vs reset", topic: "Git/GitHub", day: "Thu", hours: 1, status: "done" },
-  { title: "Build the practice tracker (2.5hr timer)", topic: "Machine Coding", day: "Sat", hours: 2.5, status: "todo" },
-  { title: "Record 2 min demo video", topic: "Mock Interview", day: "Sun", hours: 1, status: "todo" },
+  {
+    title: "Have to Build a Kanban board from scratch",
+    description: "try to Implement drag-and-drop, column filtering, and localStorage persistence.",
+    priority: "high",
+    dueDate: "2026-11-05",
+    status: "in progress",
+  },
+  {
+    title: "Go through some system design concepts",
+    description: "Like LLD,HLD and types of scaling both horizontal and vertical",
+    priority: "medium",
+    dueDate: "2026-11-03",
+    status: "todo",
+  },
+  {
+    title: "Solve 5 LeetCode problesm",
+    description: "questions based on sliding window and two-pointer patterns.",
+    priority: "high",
+    dueDate: "2026-11-02",
+    status: "todo",
+  },
+  {
+    title: "Record a 2-minute demo video",
+    description: "Walk through the project and explain key decisions.",
+    priority: "low",
+    dueDate: "2026-11-10",
+    status: "completed",
+  },
+  {
+    title: "Gonna have a mock interview with a friend",
+    description: "Hopefully this time i get a good partner .",
+    priority: "medium",
+    dueDate: "2026-11-07",
+    status: "todo",
+  },
 ];

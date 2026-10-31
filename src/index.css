@@ -7,6 +7,11 @@
   --color-accent: #3a5bff;
   --color-done: #1f9d6b;
   --color-doing: #d98a00;
+
+  /* priority badge colors */
+  --color-prio-low: #2e7d32;
+  --color-prio-medium: #e65100;
+  --color-prio-high: #c62828;
 }
 
 body {
